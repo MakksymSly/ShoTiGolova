@@ -6,6 +6,7 @@
 - **React** 
 - **TypeScript**
 - **Three.js**
+
 [DEMO](https://makksymsly.github.io/ShoTiGolova/)
 
 ![1](https://github.com/user-attachments/assets/99a3d1cf-ef7f-4a34-82d9-f9e28c1d9642)
