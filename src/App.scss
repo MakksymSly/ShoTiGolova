@@ -1,0 +1,17 @@
+.title {
+	position: absolute;
+	top: 10px;
+	width: 100%;
+  font-size: 10em;
+	text-align: center;
+	z-index: 100;
+	display:flex;
+  justify-content: center;
+  color: red;
+
+
+  @media (max-width: 768px) {
+    top: 5px;
+    font-size: 8em;
+  }
+}
