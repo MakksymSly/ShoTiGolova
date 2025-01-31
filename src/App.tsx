@@ -11,10 +11,9 @@ function App() {
 
 		mountRef.current.innerHTML = '';
 
-		// Створюємо сцену
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 500);
-		camera.position.set(0, 0, 10); // Камера ближче, щоб краще бачити об'єкт
+		camera.position.set(0, 0, 10);
 		camera.lookAt(0, 0, 0);
 
 		const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -37,14 +36,12 @@ function App() {
         
         const onMouseMove = (event: MouseEvent) => {
           if (!model) return;
-    
-          // Получаем координаты мыши в диапазоне от -1 до 1
+
           const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
           const mouseY = (event.clientY / window.innerHeight) * 2 - 1;
     
-          // Поворот черепа в зависимости от мыши
-          model.rotation.y = mouseX * Math.PI * 0.5;  // Оборачиваем по оси Y
-          model.rotation.x = mouseY * Math.PI * 0.5;  // Оборачиваем по оси X
+          model.rotation.y = mouseX * Math.PI * 0.5; 
+          model.rotation.x = mouseY * Math.PI * 0.5; 
         };
     
         window.addEventListener('mousemove', onMouseMove);
@@ -60,7 +57,6 @@ function App() {
 		};
 		animate();
 
-		// Оновлення розміру рендерера при зміні вікна
 		const handleResize = () => {
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
@@ -68,7 +64,6 @@ function App() {
 		};
 		window.addEventListener('resize', handleResize);
 
-		// Прибирання ефекту при демонтажі
 		return () => {
 			window.removeEventListener('resize', handleResize);
 			mountRef.current?.removeChild(renderer.domElement);
